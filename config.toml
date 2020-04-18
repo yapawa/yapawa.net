@@ -1,3 +1,5 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Yapawa"
+
+theme = "docsy"
