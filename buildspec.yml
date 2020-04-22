@@ -1,0 +1,35 @@
+version: 0.2
+
+environment_variables:
+  plaintext:
+    AWS_DEFAULT_REGION: "eu-central-1"
+    HUGO_VERSION: "0.68.3"
+    HUGO_SHA256: "d93d0deac782a4dd8afc2bbc5d96b30590ce47e8afb9810bbe7551eb3acf9189"
+    NODE_ENV: "development"
+    BUCKET: "yapawa.net"
+    DISTRIBUTIONID: "E3OP6BC8RBIEUT"
+
+phases:
+  install:
+    commands:
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - echo "${HUGO_SHA256}  /tmp/hugo.tar.gz" | sha256sum -c -
+      - tar xf /tmp/hugo.tar.gz -C /tmp
+      - mv /tmp/hugo /usr/bin/hugo
+      - rm -rf /tmp/hugo*
+  pre_build:
+    commands:
+      - git submodule update --init --recursive
+      - npm ci
+      - rm -rf /tmp/hugo_cache/
+      - rm -rf ./public
+  build:
+    commands:
+      - HUGO_ENV=production hugo --gc --minify --enableGitInfo
+  post_build:
+    commands:
+      - aws --region $AWS_DEFAULT_REGION s3 sync --delete --cache-control 'max-age=31536000' --acl public-read public/ s3://$BUCKET/
+      - aws cloudfront create-invalidation --distribution-id $DISTRIBUTIONID --path "/*"
+cache:
+  paths:
+    - 'node_modules/**/*'
