@@ -3,8 +3,8 @@ version: 0.2
 environment_variables:
   plaintext:
     AWS_DEFAULT_REGION: "eu-central-1"
-    HUGO_VERSION: "0.68.3"
-    HUGO_SHA256: "d93d0deac782a4dd8afc2bbc5d96b30590ce47e8afb9810bbe7551eb3acf9189"
+    HUGO_VERSION: "0.69.2"
+    HUGO_SHA256: "98e29a3f721c425c304ba97c6486d0daaadd20c4fc1779c72260f6a05a75b22e"
     NODE_ENV: "development"
     BUCKET: "yapawa.net"
     DISTRIBUTIONID: "E3OP6BC8RBIEUT"
