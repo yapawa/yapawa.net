@@ -23,19 +23,19 @@ Yapawa is a Serverless image management, hosting and distribution stack based on
 {{% /blocks/lead %}}
 
 {{< blocks/section color="dark" type="features">}}
-{{% blocks/feature icon="fa-pencil-ruler" title="Albums Manager" url="/docs/albumsManager/" %}}
+{{% blocks/feature icon="fa-pencil-ruler" title="Albums Manager" url="/docs/stacks/albums-manager/" %}}
 It's the CMS. You use it to create and manage a nested albums hierarchy. Upload and assign images to the albums. Assign cover images to the albums.
 
 You deploy to your public site in a single click.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fa-images" title="Image Resizer" url="/docs/imageResize/" %}}
+{{% blocks/feature icon="fa-images" title="Image Resizer" url="/docs/stacks/image-resize/" %}}
 Generates thumbnails from arguments in the request path and stores them to a cache for future requests.
 {{% /blocks/feature %}}
 
 
-{{% blocks/feature icon="fa-cloud" title="Public Site" url="/docs/publicsite-grid/" %}}
+{{% blocks/feature icon="fa-cloud" title="Public Site" url="/docs/stacks/public-site/" %}}
 It is the version the world sees. You can use the provided static generated site, or replace it with your own. As long as you are able to read content from an API.
 {{% /blocks/feature %}}
 

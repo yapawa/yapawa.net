@@ -1,0 +1,40 @@
+{{ $original := .Page.Resources.GetMatch (printf "**%s*" (.Get 0)) }}
+{{ $command := .Get 1 }}
+{{ $options := .Get 2 }}
+{{ $title := .Get 3 }}
+{{ if eq $command "Fit"}}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ else if eq $command "Resize"}}
+{{ .Scratch.Set "image" ($original.Resize $options) }}
+{{ else if eq $command "Fill"}}
+{{ .Scratch.Set "image" ($original.Fill $options) }}
+{{ else }}
+{{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+{{ end }}
+{{ $image := .Scratch.Get "image" }}
+<div class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: {{ add $image.Width 10 }}px">
+	<a data-toggle="modal" data-target="#img-{{ md5 $original }}">
+	<img class="card-img-top" src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+	</a>
+	{{ with .Inner }}
+	<div class="card-body px-0 pt-2 pb-0">
+		<p class="card-text">{{ . }}{{ with $image.Params.byline }}<small class="text-muted"><br/>{{ . | html }}</small>{{ end }}</p>
+	</div>
+	{{ end }}
+</div>
+
+<div class="modal fade" id="img-{{ md5 $original }}" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="width:{{ $original.Width }}px;max-width:100%">
+    <div class="modal-content">
+      <div class="modal-header">
+        {{ with $title }}<h5 class="modal-title">{{ . }}</h5>{{ end }}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img class="card-img-top" src="{{ $original.RelPermalink }}" width="{{ $original.Width }}" height="{{ $original.Height }}">
+      </div>
+    </div>
+  </div>
+</div>

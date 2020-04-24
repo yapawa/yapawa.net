@@ -30,6 +30,9 @@ Create and manage nested albums hierarchy. Upload images to the albums. Assign c
 * [ACM](https://aws.amazon.com/acm/): SSL certificate
 * [Route53](https://aws.amazon.com/route53/): DNS, certificate validation
 <div>
+<a class="btn btn-sm btn-primary mr-3 mb-4" href="{{< relref "../docs/stacks/albums manager/_index.md">}}">
+  More <i class="fas fa-arrow-alt-circle-right ml-2 "></i>
+</a>
 <a class="btn btn-sm btn-secondary mr-3 mb-4" href="https://github.com/yapawa/albumsManager">
   Github <i class="fab fa-github ml-2 "></i>
 </a>
@@ -52,6 +55,9 @@ Resizes, crops and stores image variations.
   * [Route53](https://aws.amazon.com/route53/): DNS, certificate validation
 
 <div>
+<a class="btn btn-sm btn-primary mr-3 mb-4" href="{{< relref "../docs/stacks/image resize/_index.md">}}">
+  More <i class="fas fa-arrow-alt-circle-right ml-2 "></i>
+</a>
 <a class="btn btn-sm btn-secondary mr-3 mb-4" href="https://github.com/yapawa/imageResize">
   Github <i class="fab fa-github ml-2 "></i>
 </a>
@@ -74,6 +80,9 @@ Host and serves a public version. It provides the content and layout for the pub
 * [Route53](https://aws.amazon.com/route53/): DNS, certificate validation
 
 <div>
+<a class="btn btn-sm btn-primary mr-3 mb-4" href="{{< relref "../docs/stacks/public site/_index.md">}}">
+  More <i class="fas fa-arrow-alt-circle-right ml-2 "></i>
+</a>
 <a class="btn btn-sm btn-secondary mr-3 mb-4" href="https://github.com/yapawa/imageResize">
   Github <i class="fab fa-github ml-2 "></i>
 </a>
