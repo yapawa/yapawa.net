@@ -55,6 +55,21 @@ description = "Yet Another Photo Album Web App"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
+[languages.fr]
+title = "Yapawa"
+description = "Yet Another Photo Album Web App"
+languageName ="Français"
+contentDir = "content/fr"
+# Weight used for sorting.
+weight = 2
+[[languages.fr.menu.main]]
+name = "Site Example"
+weight = 40
+url = "https://daniel.mesphotos.ch/"
+[[languages.fr.menu.main]]
+  name = "GitHub"
+  weight = 50
+  url = "https://github.com/yapawa/"
 
 [markup]
   [markup.goldmark]
