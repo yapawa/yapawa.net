@@ -24,7 +24,7 @@ Create and manage nested albums hierarchy. Upload images to the albums. Assign c
   * [DynamoDB](https://aws.amazon.com/dynamodb/): Data storage
   * [S3](https://aws.amazon.com/s3/): CMS Hosting, Image storage
   * [Cloudfront](https://aws.amazon.com/cloudfront/): CDN delivery
-  * [Lambda](https://aws.amazon.com/cloudfront/): CDN delivery
+  * [Lambda](https://aws.amazon.com/lambda/): Server side files and image manipulations
   * [Event Bridge](https://aws.amazon.com/eventbridge/): Handles deploy events
 * [Quasar](https.//quasar.dev/): VueJS Frontend Framework
 * [ACM](https://aws.amazon.com/acm/): SSL certificate
