@@ -66,7 +66,7 @@ LD+JSON and various OpenGraph metadata tags are used to improve SEO.
 
 *Grid* is a theme under a basic Hugo setup. Any other theme using Hugo could be added in this repo. PR welcome.
 
-The them to use can be defined in `config.toml`.
+The theme to use can be defined in `config.toml`.
 
 {{% alert title="Repo naming" color="secondary" %}}
 Obviously the repo suffix "-grid" wouldn't make sense anymore if there are more themes available.

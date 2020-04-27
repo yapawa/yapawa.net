@@ -29,7 +29,7 @@ This means, without the need of a [Lambda@Edge](https://aws.amazon.com/lambda/ed
 ## Environment variables
 * srcBucket: The bucket holding the originals images
 * srcPrefix: The prefix in the *srcBucket* where the images are stored
-* cacheBucket: The bucket storing the cached thumbnails ()
+* cacheBucket: The bucket storing the cached thumbnails
 * cacheDomain: The domain associated to the Cloudfront distribution
 
 ## Parameters
@@ -58,7 +58,7 @@ The cached thumbnail will be stored at the same path as the request path. This a
 
 1. Browser requests for an image
 2. The image is cached in Cloudfront: image is served. And flow stops.
-3. The image is not cached is Cloudfront: It is fetched from S3.
+3. The image is not cached in Cloudfront: It is fetched from S3.
 4. The image exists in S3, it is returned to the client and cached in Cloudfront for future requests. The flow stops.
 5. The Image doesn't exist in S3: S3 will return a 307 redirect with the HTTP API URL to the browser
 6. The browser requests the image on HTTP API
