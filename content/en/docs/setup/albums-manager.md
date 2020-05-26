@@ -77,8 +77,11 @@ If you are using several stacks in the same AWS account, you need to edit `.env`
 Tell amplify to publish your site. Amplify will automatically provision the stack.
 
 ```bash
-amplify publish --yes
+amplify publish -c --yes
 ```
+
+* `-c` tells Cloudfront to invalidate existing cache. But you still need to invalidate the cache in your Browser manually.
+* `--yes` tells Amplify to answer automatically _yes_ to any question.
 
 Be patient, this will take some time, mainly because of the Cloudfront distribution.
 

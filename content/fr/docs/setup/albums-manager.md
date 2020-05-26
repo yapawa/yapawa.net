@@ -78,8 +78,11 @@ If you are using several stacks in the same AWS account, you need to edit `.env`
 Dites à Amplify de publier votre site. Amplify va automatiquement provisionner l'infrastructure nécessaire.
 
 ```bash
-amplify publish --yes
+amplify publish -c --yes
 ```
+
+* `-c` informe Cloudfront de vider son cache. Vous devez encore effacer le cache de votre navigateur manuellement.
+* `--yes` informe Amplify de répondre _oui_ à toutes questions.
 
 Soyez patient, cela va prendre un peu de temps. Spécialement en raison de la création de la distribution Cloudfront.
 
